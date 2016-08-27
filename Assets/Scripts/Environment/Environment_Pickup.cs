@@ -27,7 +27,7 @@ public class Environment_Pickup : MonoBehaviour {
 
     void OnTriggerEnter ( Collider col)
     {
-        if (col.tag == "Player")
+        if (col.tag == "Player" && !isHit)
         {
             isHit = true;
             textField.gameObject.SetActive(true);
