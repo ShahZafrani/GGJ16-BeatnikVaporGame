@@ -16,8 +16,7 @@ public class Player_Movement : MonoBehaviour {
     public float waitTime;
     public float interactTime;
 
-    private float horizontalMove;
-    private float verticalMove;
+    public System_Record systemRecord;
 
     // Use this for initialization
     void Start () {
@@ -34,7 +33,10 @@ public class Player_Movement : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-
+        if (systemRecord.shardNum == 7)
+        {
+            states = GAME_STATE.INTERACT;
+        }
     }
 
     IEnumerator PLAY()
@@ -79,8 +81,7 @@ public class Player_Movement : MonoBehaviour {
     IEnumerator INTERACT()
     {
         canMove = false;
-        yield return new WaitForSeconds(interactTime);
-        //start zoom script
+        yield return new WaitForSeconds(0);
     }
 
     IEnumerator WAIT()

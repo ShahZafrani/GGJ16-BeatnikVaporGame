@@ -7,7 +7,7 @@ public class Environment_Pickup : MonoBehaviour {
 
     public float waitTime;
 
-    public Transform textBackground;
+    //public Transform textBackground;
     public Transform textField;
 
     public System_Record systemRecord;
@@ -17,7 +17,7 @@ public class Environment_Pickup : MonoBehaviour {
         isHit = false;
 
         textField.gameObject.SetActive(false);
-        textBackground.gameObject.SetActive(false);
+        //textBackground.gameObject.SetActive(false);
     }
 	
 	// Update is called once per frame
@@ -31,25 +31,26 @@ public class Environment_Pickup : MonoBehaviour {
         {
             isHit = true;
             textField.gameObject.SetActive(true);
-            textBackground.gameObject.SetActive(true);
-        }
-    }
-
-    void OnTriggerExit(Collider col)
-    {
-        if (col.tag == "Player")
-        {
-            //if leave trigger
-            //fade guitext then destroy object (use coroutine)
+            //textBackground.gameObject.SetActive(true);
             StartCoroutine(TextDelay(waitTime));
         }
     }
+
+    //void OnTriggerExit(Collider col)
+    //{
+    //    if (col.tag == "Player")
+    //    {
+    //        //if leave trigger
+    //        //fade guitext then destroy object (use coroutine)
+    //        StartCoroutine(TextDelay(waitTime));
+    //    }
+    //}
 
     IEnumerator TextDelay (float delayTime)
     {
         yield return new WaitForSeconds(delayTime);
         //fade objects
         textField.gameObject.SetActive(false);
-        textBackground.gameObject.SetActive(false);
+        //textBackground.gameObject.SetActive(false);
     }
 }
