@@ -43,16 +43,19 @@ public class Environment_Trigger : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-	    if (colCheck == colliders.Length)
+        if (states != GAME_STATE.COMPLETE)
         {
-            isComplete = true;
-        }
+            if (colCheck == colliders.Length)
+            {
+                isComplete = true;
+            }
 
-        if (colCheck >= colliders.Length)
-            colCheck = colliders.Length;
+            if (colCheck >= colliders.Length)
+                colCheck = colliders.Length;
 
-        if (isComplete)
-            states = GAME_STATE.TRIGGERED;          
+            if (isComplete)
+                states = GAME_STATE.TRIGGERED;
+        }          
     }
 
     void OnTriggerStay (Collider col)
