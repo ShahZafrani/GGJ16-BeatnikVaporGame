@@ -5,11 +5,15 @@ public class Environment_Pickup : MonoBehaviour {
 
     public bool isShard;
 
+    public Transform textBackground;
     public Transform textField;
+
+    public System_Record systemRecord;
     
     // Use this for initialization
 	void Start () {
         textField.gameObject.SetActive(false);
+        textBackground.gameObject.SetActive(false);
     }
 	
 	// Update is called once per frame
@@ -25,7 +29,8 @@ public class Environment_Pickup : MonoBehaviour {
             {
                 //destroy this
                 //do GUI stuff
-                Destroy(this);
+                systemRecord.shardNum++;
+                Destroy(this.gameObject);
             }
             
             else
@@ -33,6 +38,7 @@ public class Environment_Pickup : MonoBehaviour {
                 //don't destroy this
                 //turn on GUI text
                 textField.gameObject.SetActive(true);
+                textBackground.gameObject.SetActive(true);
             }
         }
     }
@@ -45,6 +51,7 @@ public class Environment_Pickup : MonoBehaviour {
             {
                 //if leave trigger, disable GUI text
                 textField.gameObject.SetActive(false);
+                textBackground.gameObject.SetActive(false);
             }
         }
     }
