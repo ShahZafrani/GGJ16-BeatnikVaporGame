@@ -16,7 +16,7 @@ public class Environment_Trigger : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-	}
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -27,7 +27,13 @@ public class Environment_Trigger : MonoBehaviour {
 
         if (colCheck >= colliders.Length)
             colCheck = colliders.Length;
-	}
+
+        if (isComplete)
+        {
+            systemRecord.shardNum++;
+        }
+            
+    }
 
     void OnTriggerStay (Collider col)
     {
@@ -51,7 +57,7 @@ public class Environment_Trigger : MonoBehaviour {
                 {
                     //change shaders
                     prps.GetComponent<Renderer>().material.shader = newShader;
-                    systemRecord.shardNum++;
+                    //systemRecord.shardNum++;
                     Destroy(this.gameObject);
                 }
             }
