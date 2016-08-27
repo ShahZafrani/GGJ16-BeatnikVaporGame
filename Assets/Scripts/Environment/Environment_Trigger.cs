@@ -11,6 +11,7 @@ public class Environment_Trigger : MonoBehaviour {
     public float textTime;
     public Transform finalQuote;
 
+    public Shader oldShader;
     public Shader newShader;
 
     public int colCheck;
@@ -87,17 +88,19 @@ public class Environment_Trigger : MonoBehaviour {
                         //systemRecord.shardNum++;
                     //}
                 }
+
+                col.GetComponent<Renderer>().material.shader = newShader;
             }
         }
     }
 
-    //void OnTriggerExit (Collider col)
-    //{
-    //    if (states == GAME_STATE.COMPLETE)
-    //    {
-    //        finalQuote.gameObject.SetActive(true);
-    //    }
-    //}
+    void OnTriggerExit(Collider col)
+    {
+        if (col.tag == "Player" && states == GAME_STATE.COMPLETE)
+        {
+            col.GetComponent<Renderer>().material.shader = oldShader;
+        }
+    }
 
     IEnumerator PLAY()
     {
