@@ -12,9 +12,10 @@ public class Environment_Trigger : MonoBehaviour {
 
     public int colCheck;
 
+    public System_Record systemRecord;
+
     // Use this for initialization
     void Start () {
-	
 	}
 	
 	// Update is called once per frame
@@ -32,15 +33,6 @@ public class Environment_Trigger : MonoBehaviour {
     {
         if (col.tag == "Player")
         {
-            //foreach (Collider coll in colliders)
-            //{
-            //    if (coll.GetComponent<Environment_Pickup>().isHit == true)
-            //    {                    
-            //        Debug.Log("all hit");
-            //        isWaiting = false;
-            //    }
-            //}
-
             for (int i = 0; i < colliders.Length; i++)
             {
                 if (colliders[i].GetComponent<Environment_Pickup>().isHit == true)
@@ -59,6 +51,8 @@ public class Environment_Trigger : MonoBehaviour {
                 {
                     //change shaders
                     prps.GetComponent<Renderer>().material.shader = newShader;
+                    systemRecord.shardNum++;
+                    Destroy(this.gameObject);
                 }
             }
         }

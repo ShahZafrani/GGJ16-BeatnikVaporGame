@@ -3,8 +3,9 @@ using System.Collections;
 
 public class Environment_Pickup : MonoBehaviour {
 
-    public bool isShard;
     public bool isHit;
+
+    public float waitTime;
 
     public Transform textBackground;
     public Transform textField;
@@ -28,22 +29,9 @@ public class Environment_Pickup : MonoBehaviour {
     {
         if (col.tag == "Player")
         {
-            if (isShard)
-            {
-                //destroy this
-                //do GUI stuff
-                systemRecord.shardNum++;
-                Destroy(this.gameObject);
-            }
-            
-            else
-            {
-                //don't destroy this
-                //turn on GUI text
-                isHit = true;
-                textField.gameObject.SetActive(true);
-                textBackground.gameObject.SetActive(true);
-            }
+            isHit = true;
+            textField.gameObject.SetActive(true);
+            textBackground.gameObject.SetActive(true);
         }
     }
 
@@ -51,12 +39,17 @@ public class Environment_Pickup : MonoBehaviour {
     {
         if (col.tag == "Player")
         {
-            if (!isShard)
-            {
-                //if leave trigger, disable GUI text
-                textField.gameObject.SetActive(false);
-                textBackground.gameObject.SetActive(false);
-            }
+            //if leave trigger
+            //fade guitext then destroy object (use coroutine)
+            StartCoroutine(TextDelay(waitTime));
         }
+    }
+
+    IEnumerator TextDelay (float delayTime)
+    {
+        yield return new WaitForSeconds(delayTime);
+        //fade objects
+        textField.gameObject.SetActive(false);
+        textBackground.gameObject.SetActive(false);
     }
 }
