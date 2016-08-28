@@ -1,9 +1,24 @@
 fileFormatVersion: 2
 guid: a729b44a93660e845bebbe39825fa884
-timeCreated: 1472393285
+timeCreated: 1472396423
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: Beet_sprite_sheet_0
+    21300002: Beet_sprite_sheet_1
+    21300004: Beet_sprite_sheet_2
+    21300006: Beet_sprite_sheet_3
+    21300008: Beet_sprite_sheet_4
+    21300010: Beet_sprite_sheet_5
+    21300012: Beet_sprite_sheet_6
+    21300014: Beet_sprite_sheet_7
+    21300016: Beet_sprite_sheet_8
+    21300018: Beet_sprite_sheet_9
+    21300020: Beet_sprite_sheet_10
+    21300022: Beet_sprite_sheet_11
+    21300024: Beet_sprite_sheet_12
+    21300026: Beet_sprite_sheet_13
+    21300028: Beet_sprite_sheet_14
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -30,28 +45,223 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     filterMode: -1
-    aniso: -1
+    aniso: 16
     mipBias: -1
-    wrapMode: -1
-  nPOTScale: 1
+    wrapMode: 1
+  nPOTScale: 0
   lightmap: 0
   rGBM: 0
   compressionQuality: 50
   allowsAlphaSplitting: 0
-  spriteMode: 0
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
-  alphaIsTransparency: 0
+  alphaIsTransparency: 1
   spriteTessellationDetail: -1
-  textureType: -1
+  textureType: 8
   buildTargetSettings: []
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Beet_sprite_sheet_0
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 638
+        width: 120
+        height: 285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Beet_sprite_sheet_1
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 639
+        width: 121
+        height: 286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Beet_sprite_sheet_2
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 634
+        width: 117
+        height: 288
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Beet_sprite_sheet_3
+      rect:
+        serializedVersion: 2
+        x: 514
+        y: 638
+        width: 124
+        height: 287
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Beet_sprite_sheet_4
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 336
+        width: 113
+        height: 287
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Beet_sprite_sheet_5
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 336
+        width: 121
+        height: 289
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Beet_sprite_sheet_6
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 335
+        width: 129
+        height: 289
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Beet_sprite_sheet_7
+      rect:
+        serializedVersion: 2
+        x: 471
+        y: 337
+        width: 115
+        height: 288
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Beet_sprite_sheet_8
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 25
+        width: 125
+        height: 283
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Beet_sprite_sheet_9
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 23
+        width: 111
+        height: 284
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Beet_sprite_sheet_10
+      rect:
+        serializedVersion: 2
+        x: 311
+        y: 22
+        width: 117
+        height: 285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Beet_sprite_sheet_11
+      rect:
+        serializedVersion: 2
+        x: 458
+        y: 26
+        width: 116
+        height: 284
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Beet_sprite_sheet_12
+      rect:
+        serializedVersion: 2
+        x: 605
+        y: 24
+        width: 117
+        height: 285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Beet_sprite_sheet_13
+      rect:
+        serializedVersion: 2
+        x: 754
+        y: 24
+        width: 106
+        height: 287
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Beet_sprite_sheet_14
+      rect:
+        serializedVersion: 2
+        x: 893
+        y: 28
+        width: 116
+        height: 286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
     outline: []
   spritePackingTag: 
   userData: 
