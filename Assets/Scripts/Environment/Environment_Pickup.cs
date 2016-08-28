@@ -29,7 +29,6 @@ public class Environment_Pickup : MonoBehaviour {
     {
         if (col.tag == "Player" && !isHit)
         {
-            isHit = true;
             textField.gameObject.SetActive(true);
             //textBackground.gameObject.SetActive(true);
             Destroy(transform.Find("Particle System").gameObject);
@@ -50,6 +49,7 @@ public class Environment_Pickup : MonoBehaviour {
         yield return new WaitForSeconds(delayTime);
         //fade objects
         textField.gameObject.SetActive(false);
+        isHit = true;
         //textBackground.gameObject.SetActive(false);
     }
 }

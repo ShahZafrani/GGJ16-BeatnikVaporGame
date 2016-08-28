@@ -121,7 +121,7 @@ public class Environment_Trigger : MonoBehaviour {
         player.GetComponent<Player_Movement>().states = Player_Movement.GAME_STATE.INTERACT;
         //zoom in
         //fade in black
-        yield return new WaitForSeconds(2.0f);
+        yield return new WaitForSeconds(0.5f);
         //display quote
         finalQuote.gameObject.SetActive(true);
         //fade black out
