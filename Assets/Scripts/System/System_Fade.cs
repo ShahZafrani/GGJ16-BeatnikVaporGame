@@ -3,42 +3,78 @@ using System.Collections;
 
 public class System_Fade : MonoBehaviour {
 
-    public GameObject Sprite;///the sprite (most of the time most of the people use plane for sprite)
-    public float fadespeed = 2;
-    public GUITexture Spriteb;//if u are using this for sprite
+    public float fadeTime;
 
-    void Update()
+    public System_Record systemRecord;
+
+    SpriteRenderer sRend;
+    Color defaultColor;
+
+    public SMUDGE_STATE states;
+    public enum SMUDGE_STATE
     {
-        ////if hit with particles
-        //if (Sprite)
-        //{
-        //    Sprite.GetComponent<Renderer>().material.color.a = Mathf.Lerp(Sprite.GetComponent<Renderer>().material.color.a, 0, Time.deltaTime * fadespeed);
-        //    if (Sprite.GetComponent<Renderer>().material.color.a == 0)
-        //    {
-        //        FadeIn();
-        //    }
-        //}
-        //if (Spriteb)
-        //{
-        //    Spriteb.color.a = Mathf.Lerp(Spriteb.color.a, 0, Time.deltaTime * fadespeed);
-        //    if (Spriteb.color.a == 0)
-        //    {
-        //        FadeIn();
-        //    }
-        //}
+        WAIT = 0,
+        VISIBLE = 1,
+        FADEOUT = 2
     }
 
-    //IEnumerator FadeIn()
-    //{
-    //    //yield return new WaitForSeconds(2);
-    //    //if (Spriteb)
-    //    //{
-    //    //    Spriteb.color.a = Mathf.Lerp(Spriteb.color.a, 1, Time.deltaTime * fadespeed);
-    //    //}
-    //    ////if hit with particles
-    //    //if (Sprite)
-    //    //{
-    //    //    Sprite.GetComponent<Renderer>().material.color.a = Mathf.Lerp(Sprite.GetComponent<Renderer>().material.color.a, 1, Time.deltaTime * fadespeed);
-    //    //}
-    //}
+    // Use this for initialization
+    void Start()
+    {
+        sRend = GetComponent<SpriteRenderer>();
+        defaultColor = sRend.material.color;
+
+        states = SMUDGE_STATE.WAIT;
+        StartCoroutine(CreateFSM());
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (systemRecord.shardNum >= 6)
+        {
+            states = SMUDGE_STATE.VISIBLE;
+        }
+        else
+            states = SMUDGE_STATE.WAIT;
+    }
+
+    IEnumerator CreateFSM()
+    {
+        while (true)
+        {
+            yield return StartCoroutine(states.ToString());
+        }
+    }
+
+    IEnumerator WAIT()
+    {
+        defaultColor.a = 0.0f;
+        sRend.material.color = defaultColor;
+        yield return new WaitForSeconds(0);
+    }
+
+    IEnumerator VISIBLE()
+    {
+        FadeIn();
+        yield return new WaitForSeconds(0);
+    }
+
+    IEnumerator FADEOUT()
+    {
+        FadeOut();
+        yield return new WaitForSeconds(0);
+    }
+
+    void FadeIn()
+    {
+        defaultColor.a += Time.deltaTime / fadeTime;
+        sRend.material.color = defaultColor;
+    }
+
+    void FadeOut()
+    {
+        defaultColor.a -= Time.deltaTime;
+        sRend.material.color = defaultColor;
+    }
 }
