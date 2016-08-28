@@ -7,11 +7,13 @@ public class Environment_Trigger : MonoBehaviour {
 
     public Collider[] colliders;
     public Collider[] props;
+    public Collider[] sprites;
 
     public float textTime;
     public Transform finalQuote;
 
     public Shader newShader;
+    public Shader newSpriteShader;
 
     public int colCheck;
 
@@ -88,7 +90,15 @@ public class Environment_Trigger : MonoBehaviour {
                     //}
                 }
 
-                col.GetComponent<Renderer>().material.shader = newShader;
+                foreach (Collider sprts in sprites)
+                {
+                    //if (isComplete)
+                    //{
+                    //change shaders
+                    sprts.transform.Find("New Sprite").gameObject.GetComponent<Renderer>().material.shader = newSpriteShader;
+                    //systemRecord.shardNum++;
+                    //}
+                }
             }
         }
     }

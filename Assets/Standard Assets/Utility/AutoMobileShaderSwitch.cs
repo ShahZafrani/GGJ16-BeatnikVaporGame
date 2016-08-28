@@ -105,7 +105,7 @@ namespace UnityStandardAssets.Utility.Inspector
             var items = property.FindPropertyRelative("items");
             var titles = new string[] {"Original", "Replacement", ""};
             var props = new string[] {"original", "replacement", "-"};
-            var widths = new float[] {.45f, .45f, .1f};
+            var widths = new float[] {.5f, .5f, .5f};
             const float lineHeight = 18;
             bool changedLength = false;
             if (items.arraySize > 0)

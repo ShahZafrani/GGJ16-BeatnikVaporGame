@@ -11,7 +11,6 @@ public class Player_Movement : MonoBehaviour {
         WAIT = 2
     }
 
-    public bool canMove;
     public float speed;
     public float waitTime;
     public float interactTime;
@@ -41,8 +40,6 @@ public class Player_Movement : MonoBehaviour {
 
     IEnumerator PLAY()
     {
-        canMove = true;
-
         yield return new WaitForSeconds(0);
         //do movement logic here
         //just use ifs. smoother movement
@@ -80,15 +77,12 @@ public class Player_Movement : MonoBehaviour {
 
     IEnumerator INTERACT()
     {
-        canMove = false;
         yield return new WaitForSeconds(0);
     }
 
     IEnumerator WAIT()
     {
-        canMove = false;
         yield return new WaitForSeconds(waitTime);
-        canMove = true;
         states = GAME_STATE.PLAY;
     }
 }
