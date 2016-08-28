@@ -11,7 +11,7 @@ public class animateDirections : MonoBehaviour
 	}
 	
 	// Update is called once per frame
-	void FixedUpdate ()
+	void Update ()
 	{
 		float lastInputX = Input.GetAxis ("Horizontal");
 		float lastInputY = Input.GetAxis ("Vertical");
@@ -19,21 +19,37 @@ public class animateDirections : MonoBehaviour
 		if (lastInputX != 0 || lastInputY != 0) {
 			anim.SetBool ("Walking", true);
 
-			if (lastInputX > 0) {
+			if (lastInputX > 0)
+            {
 				anim.SetInteger ("Direction", 4);
-			} else if (lastInputX < 0) {
-				anim.SetFloat ("Direction", 3);
-			} 
+                Debug.Log("right");
+			}
 
-			if (lastInputY > 0) {
+            if (lastInputX < 0)
+            {
+				anim.SetInteger("Direction", 3);
+                Debug.Log("left");
+            } 
+
+			if (lastInputY > 0)
+            {
 				anim.SetInteger ("Direction", 1);
-			} else if (lastInputY < 0) {
-				anim.SetFloat ("Direction", 2);
-			} 
+                Debug.Log("up");
+            }
 
-		} else {
-			anim.SetBool ("Walking", false);
+            if (lastInputY < 0)
+            {
+				anim.SetInteger("Direction", 2);
+                Debug.Log("down");
+            } 
+
 		}
+
+        else
+        {
+			anim.SetBool ("Walking", false);
+            Debug.Log("idle");
+        }
 	}
 }
 
