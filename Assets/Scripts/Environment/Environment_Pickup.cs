@@ -32,6 +32,7 @@ public class Environment_Pickup : MonoBehaviour {
             isHit = true;
             textField.gameObject.SetActive(true);
             //textBackground.gameObject.SetActive(true);
+            Destroy(transform.Find("Particle System").gameObject);
             StartCoroutine(TextDelay(waitTime));
         }
     }
@@ -40,9 +41,7 @@ public class Environment_Pickup : MonoBehaviour {
     //{
     //    if (col.tag == "Player")
     //    {
-    //        //if leave trigger
-    //        //fade guitext then destroy object (use coroutine)
-    //        StartCoroutine(TextDelay(waitTime));
+    //        Destroy(transform.Find("Particle System").gameObject);
     //    }
     //}
 
