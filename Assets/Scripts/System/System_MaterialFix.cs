@@ -43,7 +43,7 @@ public class System_MaterialFix : MonoBehaviour {
 
 #else
         
-        mesh = GetComponent<MeshFilter>().mesh
+        mesh = GetComponent<MeshFilter>().mesh;
 
 #endif
 
