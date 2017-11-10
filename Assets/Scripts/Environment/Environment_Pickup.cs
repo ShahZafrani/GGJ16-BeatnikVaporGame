@@ -7,7 +7,7 @@ public class Environment_Pickup : MonoBehaviour {
 
     public float waitTime;
 
-    //public Transform textBackground;
+    public Transform textBackground;
     public Transform textField;
 
     public System_Record systemRecord;
@@ -17,7 +17,7 @@ public class Environment_Pickup : MonoBehaviour {
         isHit = false;
 
         textField.gameObject.SetActive(false);
-        //textBackground.gameObject.SetActive(false);
+        textBackground.gameObject.SetActive(false);
     }
 	
 	// Update is called once per frame
@@ -30,7 +30,7 @@ public class Environment_Pickup : MonoBehaviour {
         if (col.tag == "Player" && !isHit)
         {
             textField.gameObject.SetActive(true);
-            //textBackground.gameObject.SetActive(true);
+            textBackground.gameObject.SetActive(true);
             Destroy(transform.Find("Particle System").gameObject);
             StartCoroutine(TextDelay(waitTime));
         }
@@ -50,6 +50,6 @@ public class Environment_Pickup : MonoBehaviour {
         //fade objects
         textField.gameObject.SetActive(false);
         isHit = true;
-        //textBackground.gameObject.SetActive(false);
+        textBackground.gameObject.SetActive(false);
     }
 }

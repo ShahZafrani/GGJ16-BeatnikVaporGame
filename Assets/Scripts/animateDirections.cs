@@ -22,25 +22,25 @@ public class animateDirections : MonoBehaviour
 			if (lastInputX > 0)
             {
 				anim.SetInteger ("Direction", 4);
-                Debug.Log("right");
+                //Debug.Log("right");
 			}
 
             if (lastInputX < 0)
             {
 				anim.SetInteger("Direction", 3);
-                Debug.Log("left");
+                //Debug.Log("left");
             } 
 
 			if (lastInputY > 0)
             {
 				anim.SetInteger ("Direction", 1);
-                Debug.Log("up");
+                //Debug.Log("up");
             }
 
             if (lastInputY < 0)
             {
 				anim.SetInteger("Direction", 2);
-                Debug.Log("down");
+                //Debug.Log("down");
             } 
 
 		}
@@ -48,7 +48,7 @@ public class animateDirections : MonoBehaviour
         else
         {
 			anim.SetBool ("Walking", false);
-            Debug.Log("idle");
+            //Debug.Log("idle");
         }
 	}
 }
